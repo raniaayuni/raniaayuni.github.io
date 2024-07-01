@@ -108,7 +108,13 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /mhs714220032/products/3:
+  /mhs714220032/products/{productId}:
+    parameters:
+      - name: productId
+        in: path
+        required: true
+        schema:
+          type: integer
     put:
       tags:
         - default
@@ -129,7 +135,24 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /mhs714220032/orders/2:
+    delete:
+      tags:
+        - default
+      summary: DeleteProduct
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /mhs714220032/orders/{orderId}:
+    parameters:
+      - name: orderId
+        in: path
+        required: true
+        schema:
+          type: integer
     put:
       tags:
         - default
@@ -154,18 +177,6 @@ paths:
       tags:
         - default
       summary: DeleteOrder
-      security:
-        - bearerAuth: []
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /mhs714220032/products/6:
-    delete:
-      tags:
-        - default
-      summary: DeleteProduct
       security:
         - bearerAuth: []
       responses:

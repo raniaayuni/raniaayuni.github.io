@@ -10,7 +10,7 @@ components:
       type: http
       scheme: bearer
 paths:
-  /mhs714220032/products:
+  /mhs714220032/product:
     get:
       tags:
         - default
